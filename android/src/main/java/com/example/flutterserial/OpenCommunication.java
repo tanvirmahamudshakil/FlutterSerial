@@ -65,7 +65,7 @@ public class OpenCommunication {
             @Override
             protected void onParse(final String port, final boolean isAscii, final String read) {
                 
-                readChannel = (new StringBuffer().append(read).toString());
+                readChannel = (new StringBuffer().append(port).append("/").append(isAscii ? "ascii" : "hex").append(" read：").append(read).append("\n").toString());
                 Map<String,String>dataMap= new HashMap<String,String>();
                 dataMap.put("LogChannel",logChannel);
                 dataMap.put("readChannel",readChannel);
